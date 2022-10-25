@@ -48,7 +48,7 @@
     
     <title>
         
-            Linux 虚拟文件系统 | 
+            AI改变了什么 | 
         
         Wooyme&#39;s Blog
     </title>
@@ -59,7 +59,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="我怎么会是正经人呢">
-    <meta name="keywords" content=",C,Linux">
+    <meta name="keywords" content="">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -220,7 +220,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Wooyme&#39;s Blog">
-    <meta name="msapplication-starturl" content="http://wooyme.github.io/2021/04/28/Linux-%E8%99%9A%E6%8B%9F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">
+    <meta name="msapplication-starturl" content="http://wooyme.github.io/2022/10/25/%E6%88%91%E5%AF%B9AI%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9C%8B%E6%B3%95/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Wooyme&#39;s Blog">
@@ -235,16 +235,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://wooyme.github.io/2021/04/28/Linux-%E8%99%9A%E6%8B%9F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">
+    <meta property="og:url" content="http://wooyme.github.io/2022/10/25/%E6%88%91%E5%AF%B9AI%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9C%8B%E6%B3%95/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Linux 虚拟文件系统 | Wooyme&#39;s Blog">
+    <meta property="og:title" content="AI改变了什么 | Wooyme&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="我怎么会是正经人呢">
-    <meta property="og:article:tag" content="C"> <meta property="og:article:tag" content="Linux"> 
+    
 
     
-        <meta property="article:published_time" content="Wed Apr 28 2021 22:36:08 GMT+0800">
-        <meta property="article:modified_time" content="Tue Aug 02 2022 02:16:22 GMT+0800">
+        <meta property="article:published_time" content="Tue Oct 25 2022 18:22:14 GMT+0800">
+        <meta property="article:modified_time" content="Tue Oct 25 2022 20:15:12 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -252,7 +252,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://wooyme.github.io/2021/04/28/Linux-%E8%99%9A%E6%8B%9F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/index.html" />
+        <link rel="canonical" href="http://wooyme.github.io/2022/10/25/%E6%88%91%E5%AF%B9AI%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9C%8B%E6%B3%95/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -264,10 +264,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://wooyme.github.io/2021/04/28/Linux-%E8%99%9A%E6%8B%9F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/index.html",
-    "headline": "Linux 虚拟文件系统",
-    "datePublished": "Wed Apr 28 2021 22:36:08 GMT+0800",
-    "dateModified": "Tue Aug 02 2022 02:16:22 GMT+0800",
+    "mainEntityOfPage": "http://wooyme.github.io/2022/10/25/%E6%88%91%E5%AF%B9AI%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9C%8B%E6%B3%95/index.html",
+    "headline": "AI改变了什么",
+    "datePublished": "Tue Oct 25 2022 18:22:14 GMT+0800",
+    "dateModified": "Tue Oct 25 2022 20:15:12 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Wooyme",
@@ -285,7 +285,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",C,Linux",
+    "keywords": "",
     "description": "我怎么会是正经人呢",
 }
 </script>
@@ -351,7 +351,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%89%8D%E8%A8%80"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#VFS"><span class="post-toc-number">2.</span> <span class="post-toc-text">VFS</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97"><span class="post-toc-number">3.</span> <span class="post-toc-text">内核模块</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%B3%A8%E5%86%8C%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="post-toc-number">4.</span> <span class="post-toc-text">注册文件系统</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%89%8D%E8%A8%80"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88AI%E5%8F%AF%E4%BB%A5"><span class="post-toc-number">2.</span> <span class="post-toc-text">为什么AI可以</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88AI%E4%B8%8D%E5%8F%AF%E4%BB%A5"><span class="post-toc-number">3.</span> <span class="post-toc-text">为什么AI不可以</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BB%98%E7%94%BB%E9%A2%86%E5%9F%9F%E4%B8%8E%E7%BC%96%E7%A8%8B%E9%A2%86%E5%9F%9F%E7%9A%84%E6%AF%94%E8%BE%83%E3%80%82"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">绘画领域与编程领域的比较。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%A2%86%E5%9F%9F%E6%8E%A8%E5%B9%BF"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">领域推广</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#AI%E6%94%B9%E5%8F%98%E4%BA%86%E4%BB%80%E4%B9%88"><span class="post-toc-number">4.</span> <span class="post-toc-text">AI改变了什么</span></a></li></ol>
     </ul>
     
 
@@ -383,7 +383,7 @@
         
     
             <p class="article-headline-p">
-                Linux 虚拟文件系统
+                AI改变了什么
             </p>
         </div>
 
@@ -402,7 +402,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Wooyme</strong>
-        <span>4月 28, 2021</span>
+        <span>10月 25, 2022</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -420,15 +420,6 @@
 
     <!-- Tags (bookmark) -->
     
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-none-link" href="/tags/C/" rel="tag">C</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/Linux/" rel="tag">Linux</a>
-    </ul>
-    
 
     <!-- Share -->
     
@@ -443,7 +434,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Linux 虚拟文件系统&url=http://wooyme.github.io/2021/04/28/Linux-%E8%99%9A%E6%8B%9F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/index.html&pic=http://wooyme.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=AI改变了什么&url=http://wooyme.github.io/2022/10/25/%E6%88%91%E5%AF%B9AI%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9C%8B%E6%B3%95/index.html&pic=http://wooyme.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -452,7 +443,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Linux 虚拟文件系统&url=http://wooyme.github.io/2021/04/28/Linux-%E8%99%9A%E6%8B%9F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/index.html&via=Wooyme" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=AI改变了什么&url=http://wooyme.github.io/2022/10/25/%E6%88%91%E5%AF%B9AI%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9C%8B%E6%B3%95/index.html&via=Wooyme" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -461,7 +452,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://wooyme.github.io/2021/04/28/Linux-%E8%99%9A%E6%8B%9F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://wooyme.github.io/2022/10/25/%E6%88%91%E5%AF%B9AI%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9C%8B%E6%B3%95/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -470,7 +461,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://wooyme.github.io/2021/04/28/Linux-%E8%99%9A%E6%8B%9F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://wooyme.github.io/2022/10/25/%E6%88%91%E5%AF%B9AI%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9C%8B%E6%B3%95/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -495,69 +486,24 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很久没有写博客了。一是同居之后就懒了，二是也一直没有什么有意思的idea。一年多的时间里除了参加了下game-off2020也没干别的什么事。不过最近因为想做个东西，学习了一下虚拟文件系统VFS(Virtual File System)，然后遇到了一些坑，所以写篇文章，记录一下。</p>
-<h1 id="VFS"><a href="#VFS" class="headerlink" title="VFS"></a>VFS</h1><p>众所周知，Linux下有个概念叫做“一切皆文件”。关于这个概念有个很明显的体现，那就是<code>/dev</code>目录。我们进入<code>/dev</code>目录可以发现许多“虚假”的文件，像是<code>/dev/core</code>,<code>/dev/cpu</code>,<code>/dev/stdin</code>等。曾经我还天真的以为这些真的是文件，甚至还在思考Linux怎么用这么原始的方式来记录内核、CPU这些信息。现在想来还是too young too simple.<br>不过<code>/dev</code>目录下的<em>文件</em>与<em>VFS</em>还是有不同的。通过<code>/dev</code>的名称<strong>dev-&gt;device</strong>就可以发现，这其中的文件实际上应该与某个设备对应。所以<code>/dev</code>中的<em>文件</em>更加趋向于是一些驱动。关于如何写一个驱动，可以看这篇文章。</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://olegkutkov.me/2018/03/14/simple-linux-character-device-driver/">https://olegkutkov.me/2018/03/14/simple-linux-character-device-driver/</a></p>
-</blockquote>
-<p>驱动的实现与VFS的实现有相同的地方，也可以看做是一个单一的虚拟文件。<br>那么什么是<strong>虚拟文件系统</strong>呢？从名字就可以看出，它的重点在<strong>虚拟</strong>上。实际上，Linux允许开发者通过加载内核模块的方式来安装一个<strong>不需要实际硬件</strong>的文件系统,所有对这个文件系统的系统调用最终会调用到内核模块中开发者定义的函数里。因此这就成为了一个<strong>虚拟</strong>的文件系统。</p>
-<h1 id="内核模块"><a href="#内核模块" class="headerlink" title="内核模块"></a>内核模块</h1><p>那么实现一个虚拟文件系统，首先要实现一个内核模块。我们先从一段简单的代码看起</p>
-<blockquote>
-<p>main.c</p>
-</blockquote>
-<pre><code class="C">#include &lt;linux/init.h&gt;
-#include &lt;linux/module.h&gt;
-#include &lt;linux/kernel.h&gt;
-static int __init my_init()&#123;
-    printk(&quot;My module init&quot;);
-    return 0;
-&#125; 
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近Novelai很火。也因为它的爆红，我看到了大致分为两派的观点。一派大多是不会画画的其他行业人群，这一派对AI绘画总体持支持态度。而另一派是以现在的画师或是未来的画师为主，出于版权或者职业焦虑的角度对AI绘画持抵制态度。就现状来看，现在的抵制已经太晚。在可以预见的未来，AI会取代大部分底层画师的岗位，这一点是必然的。</p>
+<p>这几年来，从棋手到画师，AI已经向我们证明了一件事：许多我们认为不可能被计算机代替的领域已经岌岌可危了。</p>
+<h1 id="为什么AI可以"><a href="#为什么AI可以" class="headerlink" title="为什么AI可以"></a>为什么AI可以</h1><p>一直以来，艺术创作一直是被我们认为是人类得天独厚的能力。但是仔细思考，艺术创作到底是一个什么样的过程，为什么我们就可以这样坚信机器无法完成这种工作。首先让我们抽象出艺术创作的整个流程：某个人基于自己见过的种种元素，加上自己的主观思考，创作出一个产物，然后其他人对这个产物进行评价。评价高的成为了艺术品，而评价低的成为了垃圾。当然这个评价会因为人群、时代等因素动态的改变。但是总之，艺术创作就是一个输入元素，输出一个可以被评价的产物的过程。  </p>
+<p>而这种过程，实际上是可以在数学的角度被表达的。艺术（并非艺术品，艺术品是这个高维空间里的几个维度）可以被解析成一个高维空间里的函数。这个函数计算艺术品本身、时代、评价人群等等因素，得到一个评价值（所以不同时代、不同的人都可以对同一个作品产生不同的评价）。而且如果我们不只局限在艺术的领域，那可以得出一个结论：<strong>任何一种创造都是一个函数</strong>。</p>
+<p>人类并不擅长在这样的高维空间里思考，人类很难将复杂的，没有强因果关系的庞大维度组合在一起直接计算出这个函数（当然电脑也不能，要逆推出这个函数所需的算力是不可能达到的，至少在可见的未来里是不可能的）。所以在非常长的时间里，人类一直用一些笼统的词汇（概括描述）或者片面的词汇（特征描述）来表达艺术创作的产物。 </p>
+<p>然而，AI的出现一定程度上改变了这种现状。虽然机器依然不能推导”艺术”这个函数，但是它提供在一定区间里拟合这个函数的可能。并且理论上在有限的区间内，神经网络完全可以通过几万、几十万个参数在人类无法想象的高维空间里拟合任何一条曲线。也就是说，<strong>AI可以拟合任何一种创造</strong>。  </p>
+<p>当然这只是一个简单的哲学与数学上的思考。从现状来说，当空间的维度足够高的时候，现有的算力还是不够的。AI绘画之所以能够成功，只是因为人类最近找到了绘画领域加速这个拟合的手段而已。所以很多行业要被完全代替应该还要非常久。</p>
+<p>然而即使AI能够拟合所有的创造，也并不代表与创造相关的职业会被AI全部取代。因为在这个创造到评价的函数里有一个除了创造的产物外非常重要的维度——<strong>评价系统</strong></p>
+<h1 id="为什么AI不可以"><a href="#为什么AI不可以" class="headerlink" title="为什么AI不可以"></a>为什么AI不可以</h1><h2 id="绘画领域与编程领域的比较。"><a href="#绘画领域与编程领域的比较。" class="headerlink" title="绘画领域与编程领域的比较。"></a>绘画领域与编程领域的比较。</h2><p>在很早之前，程序员的行业里诞生了另一个AI，Copilot。它的功能简单来说就是可以帮人写代码。如果从上文的观点里出发，我们可以很容易得出一个结论：AI可以包办大部分的程序开发，大量的程序员会失业。从长远来看，程序员的数量是必然会减少的，但是大部分的程序员并不会因此失业。因为这个创造函数中有个关键的维度，<strong>评价系统</strong>。放在程序的行业里就是：我们要如何评价一段代码的好坏。  </p>
+<p>这里就体现出了程序行业与绘画行业的差异。对于一幅画，任何人都可以对它做出评价，并且这个评价是有一定权重的（或者说价值）。简单的说就是，一个人对一幅画做出一个评价之后，这个人大概率能找到其他一批人对这幅画做出类似的评价。他能找到的人越多，这个评价的权重就越高。而在程序的领域，没有相关知识的人对一段代码做出的评价的权重可能基本为0（比如说，他会说这段代码看起来很整齐、首字母都大写了），因为他能评价的维度本身权重就非常低，即使他能找到一群人对代码做出同样的评价，这个权重也不会因此上升。  </p>
+<p>这就是评价系统导致的差异。没有学过绘画的人依然可以评价一幅画，而没有学过编程的人很难评价一个程序。而这个差异的存在注定了AI无法代替程序员。因为一旦没有了程序员，没有人能评价AI产生的代码的好坏。  </p>
+<p>那当然，会有人认为我们可以引入另一个AI来评价代码的好坏。这就出现了另一个问题，我们无法评价这个AI的评价的好坏。所以我们就还需要下一个AI来评价上一个AI的评价。这样一直递归下去是没有终点的，所以完全靠AI来写程序这个事情是无法闭环的。</p>
+<p>或者还有人表示，可以用测试的方式来评价一个程序的好坏。这依然不行，我举个简单的例子，现在AI产生了一个可以计算加法的程序。我们要怎么测试这个程序的好坏呢，我们可以输入1+1，然后程序输出2。但是这只能证明它计算1+1&#x3D;2是正确的。于是我们继续输入，从2+2到100+100。程序都得出了正确的结论。但是呢，相对无穷的整数，现在它能计算正确的概率是100&#x2F;∞，也就是0。所以一种只检测输入输出的测试也不能评价一个程序的好坏。  </p>
+<p>因此，没有行业知识的人依然无法评价一段代码。</p>
+<h2 id="领域推广"><a href="#领域推广" class="headerlink" title="领域推广"></a>领域推广</h2><p>通过上文的比较，我们也许可以推导出一个结论，<strong>如果一个领域的评价是需要门槛的话，那这个领域受AI的冲击就不会太大</strong>。比如说建筑设计，可能很多人认为AI代替画师的下一步就是代替设计师，但是建筑设计这个行业的评价也是有门槛的。即使外行人普遍评价某座桥真漂亮，这句评价的权重也不会太高，因为桥的主要功能不是漂亮。 </p>
+<p>因此，反而是大量充斥着人的主观判断的领域, 只要一个人能在社会群体中存在，那就已经达到了这个领域的评价门槛。而AI的存在，直接将创作的门槛拉低到与评价接近，使得大部分人没有受过专业的学习也能完成创作。</p>
+<h1 id="AI改变了什么"><a href="#AI改变了什么" class="headerlink" title="AI改变了什么"></a>AI改变了什么</h1><p>所以，要我对这段话做一个总结的话，那就是：<strong>AI没有降低评价的门槛，AI只是降低了创造的门槛</strong>。也许以后的人选择职业需要从评价门槛的角度来思考一下了。仔细想想的话，也许每一次产业的升级都是这样一个过程，只是我们现在正在见证这个过程。</p>
 
-static void __exit my_exit()&#123;
-    printk(&quot;My module exit&quot;);
-&#125;
-
-module_init(my_init);
-module_exit(my_exit);
-</code></pre>
-<blockquote>
-<p>Makefile</p>
-</blockquote>
-<pre><code class="Makefile">BINARY     := my
-KERNEL      := /lib/modules/$(shell uname -r)/build
-ARCH        := x86
-C_FLAGS     := -Wall
-KMOD_DIR    := $(shell pwd)
-TARGET_PATH := /lib/modules/$(shell uname -r)/kernel/drivers/char
-
-OBJECTS := main.o
-
-ccflags-y += $(C_FLAGS)
-
-obj-m += $(BINARY).o
-
-$(BINARY)-y := $(OBJECTS)
-
-$(BINARY).ko:
-        make -C $(KERNEL) M=$(KMOD_DIR) modules
-install:
-        cp $(BINARY).ko $(TARGET_PATH)
-            depmod -a
-uninstall:
-        rm $(TARGET_PATH)/$(BINARY).ko
-            depmod -a
-clean:
-        make -C $(KERNEL) M=$(KMOD_DIR) clean
-</code></pre>
-<p>在su下执行命令就可以安装我们的模块了</p>
-<blockquote>
-<p>make clean &amp;&amp; make &amp;&amp; insmod my.ko</p>
-</blockquote>
-<p>安装后可以到<code>/var/log/kern.log</code>查看打印的日志。模块的代码很短，可以发现比较关键的部分是<code>module_init</code>和<code>module_exit</code>。这是两个宏，更多的信息可以访问该地址</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.cs.bham.ac.uk/~exr/teaching/lectures/opsys/13_14/docs/kernelAPI/r14.html">https://www.cs.bham.ac.uk/~exr/teaching/lectures/opsys/13_14/docs/kernelAPI/r14.html</a></p>
-</blockquote>
-<h1 id="注册文件系统"><a href="#注册文件系统" class="headerlink" title="注册文件系统"></a>注册文件系统</h1>
         
     
 
@@ -575,8 +521,8 @@ clean:
     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://wooyme.github.io/2021/04/28/Linux-%E8%99%9A%E6%8B%9F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://wooyme.github.io/2021/04/28/Linux-%E8%99%9A%E6%8B%9F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://wooyme.github.io/2022/10/25/%E6%88%91%E5%AF%B9AI%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9C%8B%E6%B3%95/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://wooyme.github.io/2022/10/25/%E6%88%91%E5%AF%B9AI%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9C%8B%E6%B3%95/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 <script type="text/ls-javascript" id="disqus-thread-script">
@@ -612,7 +558,7 @@ clean:
 
     <!-- Next Nav -->
     
-        <a href="/2020/03/16/Wooyme%E6%95%99%E4%BD%A0%E7%A7%BD%E5%9C%9F%E8%BD%AC%E7%94%9F-2/" id="post_nav-older" class="next-content">
+        <a href="/2022/08/12/Wooyme%E6%95%99%E4%BD%A0%E6%8D%A1%E5%9E%83%E5%9C%BE-%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
@@ -704,7 +650,7 @@ clean:
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2021/04/">四月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/archives/2022/10/">十月 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/08/">八月 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">6</span></a>
             </ul>
         </li>
         
