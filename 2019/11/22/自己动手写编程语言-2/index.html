@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/bollnh/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://.disqus.com"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            自己动手写编程语言(2) | 
+        
+        Wooyme&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.svg">
+    <link rel="icon" href="/img/favicon.svg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="我怎么会是正经人呢">
+    <meta name="keywords" content=",NMSL,编译">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Wooyme&#39;s Blog">
+    <meta name="msapplication-starturl" content="http://wooyme.github.io/2019/11/22/%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E5%86%99%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80-2/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Wooyme&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.svg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://wooyme.github.io/2019/11/22/%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E5%86%99%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80-2/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="自己动手写编程语言(2) | Wooyme&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.svg">
+    <meta property="og:description" content="我怎么会是正经人呢">
+    <meta property="og:article:tag" content="NMSL"> <meta property="og:article:tag" content="编译"> 
+
+    
+        <meta property="article:published_time" content="Fri Nov 22 2019 01:08:27 GMT+0800">
+        <meta property="article:modified_time" content="Tue Aug 27 2024 16:00:05 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://wooyme.github.io/2019/11/22/%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E5%86%99%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80-2/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://wooyme.github.io/2019/11/22/%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E5%86%99%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80-2/index.html",
+    "headline": "自己动手写编程语言(2)",
+    "datePublished": "Fri Nov 22 2019 01:08:27 GMT+0800",
+    "dateModified": "Tue Aug 27 2024 16:00:05 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Wooyme",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Wooyme&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.svg"
+        }
+    },
+    "keywords": ",NMSL,编译",
+    "description": "我怎么会是正经人呢",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%89%8D%E8%A8%80"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%BC%96%E8%AF%91%E6%9C%9F%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%9F"><span class="post-toc-number">2.</span> <span class="post-toc-text">编译期与运行期</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Node"><span class="post-toc-number">3.</span> <span class="post-toc-text">Node</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Expression"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Expression</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84Expression"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">更复杂的Expression</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Node%E6%80%BB%E7%BB%93"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">Node总结</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%BF%90%E8%A1%8C%E6%9C%9F"><span class="post-toc-number">4.</span> <span class="post-toc-text">运行期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DynamicObject"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">DynamicObject</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="post-toc-number">5.</span> <span class="post-toc-text">小结</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                自己动手写编程语言(2)
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Wooyme</strong>
+        <span>11月 22, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-none-link" href="/tags/NMSL/" rel="tag">NMSL</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/%E7%BC%96%E8%AF%91/" rel="tag">编译</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=自己动手写编程语言(2)&url=http://wooyme.github.io/2019/11/22/%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E5%86%99%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80-2/index.html&pic=http://wooyme.github.io/img/favicon.svg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=自己动手写编程语言(2)&url=http://wooyme.github.io/2019/11/22/%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E5%86%99%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80-2/index.html&via=Wooyme" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://wooyme.github.io/2019/11/22/%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E5%86%99%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80-2/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://wooyme.github.io/2019/11/22/%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E5%86%99%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80-2/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>把修改后的上传到了我的仓库</p>
+<blockquote>
+<p><a href="https://github.com/Wooyme/NMSL">https://github.com/Wooyme/NMSL</a></p>
+</blockquote>
+<p>顺便取了个意义不明的名字<code>Naive Mind Specialize Language</code>，简称nmsl。</p>
+<p>这篇先写一点原理相关的东西，然后就是lambda。</p>
+<h1 id="编译期与运行期"><a href="#编译期与运行期" class="headerlink" title="编译期与运行期"></a>编译期与运行期</h1><p>开发语言和开发应用最大的区别就是语言开发中我们要预想的情况并不是程序的运行情况而是语言编译的情况。把运行和编译的逻辑理清楚后就能理解很多东西了。</p>
+<p>英语比较好的话可以看一下</p>
+<blockquote>
+<p> <a href="https://www.youtube.com/watch?v=FJY96_6Y3a4">https://www.youtube.com/watch?v=FJY96_6Y3a4</a></p>
+<p>《 One VM to Rule Them All, One VM to Bind Them》</p>
+</blockquote>
+<p>是Oracle Labs的人做的演讲。比较尴尬的是没有英文字幕，只能完全靠听力了。</p>
+<h1 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h1><p>首先我们看到<code>parser</code>包下的<code>SLNodeFactory</code>里有大量的<code>createXXX</code>的方法，而在<code>nodes</code>目录下都是继承了<code>Node</code>的类。了解过编译原理的朋友肯定知道编译器首先要解析语法然后生成相应的语法树，那么既然有树就肯定会有节点，而<code>Node</code>类代表的就是这些节点。  </p>
+<p><code>SimpleLanguage</code>中有<code>builtin</code>，<code>expression</code>，<code>controlflow</code>，<code>local</code>这4个包，分别包含了内置函数，表达式，控制流和局部读写的节点。</p>
+<h2 id="Expression"><a href="#Expression" class="headerlink" title="Expression"></a>Expression</h2><p><code>Expression</code>是比较简单的一种节点，功能上和<code>builtin</code>类似，但是与语法解析过程的联系更加紧密一些。</p>
+<p>首先以<code>SLBigIntegerLiteralNode.java</code>为例。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@NodeInfo(shortName = &quot;const&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SLBigIntegerLiteralNode</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">SLExpressionNode</span> &#123;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> SLBigNumber value;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">SLBigIntegerLiteralNode</span><span class="hljs-params">(BigDecimal value)</span> &#123;<br>        <span class="hljs-built_in">this</span>.value = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SLBigNumber</span>(value);<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> SLBigNumber <span class="hljs-title function_">executeGeneric</span><span class="hljs-params">(VirtualFrame frame)</span> &#123;<br>        <span class="hljs-keyword">return</span> value;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这个是涉及code generate最少的一个类了，所以就以它为例。<code>SLBigIntegerLiteralNode</code>总共就一个构造函数和一个<code>executeGeneric</code>方法。这里就出现了一个生命周期的问题。<strong>SLBigIntegerLiteralNode在生成语法树的过程中被实例化</strong>而<strong>executeGeneric是在代码运行的时候被调用</strong></p>
+<p>所以就有了<code>SLBigIntegerLiteralNode</code>中的操作，在生成语法树的过程中把常量<code>value</code>保存在类里，然后在<code>executeGeneric</code>中直接返回这个保存的值。</p>
+<h2 id="更复杂的Expression"><a href="#更复杂的Expression" class="headerlink" title="更复杂的Expression"></a>更复杂的Expression</h2><p>以<code>SLWritePropertyNode</code>为例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@NodeInfo(shortName = &quot;.=&quot;)</span><br><span class="hljs-meta">@NodeChild(&quot;receiverNode&quot;)</span><br><span class="hljs-meta">@NodeChild(&quot;nameNode&quot;)</span><br><span class="hljs-meta">@NodeChild(&quot;valueNode&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SLWritePropertyNode</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">SLExpressionNode</span> &#123;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> <span class="hljs-variable">LIBRARY_LIMIT</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>;<br><br>    <span class="hljs-meta">@Specialization(guards = &quot;arrays.hasArrayElements(receiver)&quot;, limit = &quot;LIBRARY_LIMIT&quot;)</span><br>    <span class="hljs-keyword">protected</span> Object <span class="hljs-title function_">write</span><span class="hljs-params">(Object receiver, Object index, Object value,</span><br><span class="hljs-params">                    <span class="hljs-meta">@CachedLibrary(&quot;receiver&quot;)</span> InteropLibrary arrays,</span><br><span class="hljs-params">                    <span class="hljs-meta">@CachedLibrary(&quot;index&quot;)</span> InteropLibrary numbers)</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            arrays.writeArrayElement(receiver, numbers.asLong(index), value);<br>        &#125; <span class="hljs-keyword">catch</span> (UnsupportedMessageException | UnsupportedTypeException | InvalidArrayIndexException e) &#123;<br>            <span class="hljs-keyword">throw</span> SLUndefinedNameException.undefinedProperty(<span class="hljs-built_in">this</span>, index);<br>        &#125;<br>        <span class="hljs-keyword">return</span> value;<br>    &#125;<br><br>    <span class="hljs-meta">@Specialization(limit = &quot;LIBRARY_LIMIT&quot;)</span><br>    <span class="hljs-keyword">protected</span> Object <span class="hljs-title function_">write</span><span class="hljs-params">(Object receiver, Object name, Object value,</span><br><span class="hljs-params">                    <span class="hljs-meta">@CachedLibrary(&quot;receiver&quot;)</span> InteropLibrary objectLibrary,</span><br><span class="hljs-params">                    <span class="hljs-meta">@Cached</span> SLToMemberNode asMember)</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            objectLibrary.writeMember(receiver, asMember.execute(name), value);<br>        &#125; <span class="hljs-keyword">catch</span> (UnsupportedMessageException | UnknownIdentifierException | UnsupportedTypeException e) &#123;<br>            <span class="hljs-comment">// write was not successful. In SL we only have basic support for errors.</span><br>            <span class="hljs-keyword">throw</span> SLUndefinedNameException.undefinedProperty(<span class="hljs-built_in">this</span>, name);<br>        &#125;<br>        <span class="hljs-keyword">return</span> value;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>首先看到的是多了几个<code>NodeChild</code>的类注解以及<code>Specialization</code>的方法注解。刚刚也提到了code generate，所以这两个注解很明显就是和代码生成相关的。比较一下和上面的区别。发现<code>SLWritePropertyNode</code>是abstract的也没有实现<code>executeGeneric</code>方法，这就说明生成的代码为我们做了不少事情。</p>
+<p>代码生成器生成的代码就不贴了，转述一下《 One VM to Rule Them All, One VM to Bind Them》里的话：</p>
+<p><code>@NodeChild(&quot;receiverNode&quot;)</code>会生成<code>private final Node receiverNode; </code>同时会生成<code>create(Node receiverNode)</code>方法，而三个<code>NodeChild</code>自然就会生成三个这样的属性和三个create的参数。</p>
+<p>与这些node相对的是带有<code>Specialization</code>注解的方法的参数，<strong>这个对应关系只与顺序相关，与名称是无关的</strong>。在运行过程中，生成的代码会调用三个子Node的<code>executeGeneric</code>方法得到值，然后传入到带有<code>Specialization</code>注解的方法中。</p>
+<h2 id="Node总结"><a href="#Node总结" class="headerlink" title="Node总结"></a>Node总结</h2><p>与<code>ExpressionNode</code>相同，其他几类Node的生命周期也是这样。不过有些细节上的区别。比如<code>Builtins</code>会在<code>SLContext</code>里被提前install。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//SLContext中安装内置函数</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">installBuiltins</span><span class="hljs-params">()</span> &#123;<br>    installBuiltin(SLReadlnBuiltinFactory.getInstance());<br>    installBuiltin(SLPrintBuiltinFactory.getInstance());<br>    installBuiltin(SLNanoTimeBuiltinFactory.getInstance());<br>    installBuiltin(SLDefineFunctionBuiltinFactory.getInstance());<br>    installBuiltin(SLStackTraceBuiltinFactory.getInstance());<br>    installBuiltin(SLNewObjectBuiltinFactory.getInstance());<br>    installBuiltin(SLEvalBuiltinFactory.getInstance());<br>    installBuiltin(SLGetSizeBuiltinFactory.getInstance());<br>    installBuiltin(SLHasSizeBuiltinFactory.getInstance());<br>    installBuiltin(SLIsExecutableBuiltinFactory.getInstance());<br>    installBuiltin(SLIsNullBuiltinFactory.getInstance());<br>    installBuiltin(SLWrapPrimitiveBuiltinFactory.getInstance());<br>    installBuiltin(SLMembersBuiltinFactory.getInstance());<br>    installBuiltin(SLOpenBuiltinFactory.getInstance());<br>    installBuiltin(SLWriteBuiltinFactory.getInstance());<br>    installBuiltin(SLCloseBuiltinFactory.getInstance());<br>    installBuiltin(SLReadBuiltinFactory.getInstance());<br>    installBuiltin(SLSleepBuiltinFactory.getInstance());<br>    installBuiltin(SLInterfaceBuiltinFactory.getInstance());<br>    installBuiltin(SLToIntNodeFactory.getInstance());<br>    installBuiltin(SLFromProxyBuiltinFactory.getInstance());<br>    installBuiltin(SLUnInterfaceBuiltinFactory.getInstance());<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="运行期"><a href="#运行期" class="headerlink" title="运行期"></a>运行期</h1><p>可以看到在<code>SLWritePropertyNode</code>中有这样一个方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Specialization(guards = &quot;arrays.hasArrayElements(receiver)&quot;, limit = &quot;LIBRARY_LIMIT&quot;)</span><br><span class="hljs-keyword">protected</span> Object <span class="hljs-title function_">write</span><span class="hljs-params">(Object receiver, Object index, Object value,</span><br><span class="hljs-params">                <span class="hljs-meta">@CachedLibrary(&quot;receiver&quot;)</span> InteropLibrary arrays,</span><br><span class="hljs-params">                <span class="hljs-meta">@CachedLibrary(&quot;index&quot;)</span> InteropLibrary numbers)</span> &#123;<br>    <span class="hljs-keyword">try</span> &#123;<br>        arrays.writeArrayElement(receiver, numbers.asLong(index), value);<br>    &#125; <span class="hljs-keyword">catch</span> (UnsupportedMessageException | UnsupportedTypeException | InvalidArrayIndexException e) &#123;<br>        <span class="hljs-keyword">throw</span> SLUndefinedNameException.undefinedProperty(<span class="hljs-built_in">this</span>, index);<br>    &#125;<br>    <span class="hljs-keyword">return</span> value;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这里出现了<code>InteropLibrary</code>这个类型，根据注解可以看出来，<code>InteropLibrary</code>和前面的<code>Object</code>是有关的。这里具体是什么关系很难直接说明，但是可以看到在<code>SLObjectType</code>与<code>SLBigNumber</code>这两个类的注解中均出现了<code>InteropLibrary.class</code>。这就是Truffle API让人用着很不爽的地方，它大量的使用了注解和代码生成，让代码结构非常混乱，而且还找不到文档。如果不看完那3个小时的视频很多地方就很难理解。</p>
+<p>现在已知的是，可以从<code>receiver</code>和<code>index</code>中产生它们对应的<code>InteropLibrary</code>，也就是这里的<code>arrays</code>和<code>numbers</code>。</p>
+<p>然后在<code>@Specialization</code>的注解中可以看到<code>guards</code>属性，从字面意思上就可以看出这个属性会生成用于保证方法正确运行的代码。因为这个<code>write</code>方法是要向array写入，所以这里的<code>receiver</code>就必须是array，于是就有了guards里的代码，保证receiver是有数组元素的。</p>
+<p>但是！事实上，我们想要的往往是<code>List</code>，而不是一个<code>Array</code>，所以为了实现往<code>List</code>里写入元素只要加入这样一个方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Specialization(limit = &quot;LIBRARY_LIMIT&quot;)</span><br><span class="hljs-keyword">protected</span> Object <span class="hljs-title function_">write</span><span class="hljs-params">(List receiver, Object index, Object value,</span><br><span class="hljs-params">                       <span class="hljs-meta">@CachedLibrary(&quot;index&quot;)</span> InteropLibrary numbers)</span>&#123;<br>    <span class="hljs-keyword">try</span> &#123;<br>        receiver.set(numbers.asInt(index),value); <br>    &#125; <span class="hljs-keyword">catch</span> (UnsupportedMessageException | IndexOutOfBoundsException e) &#123;<br>        <span class="hljs-keyword">throw</span> SLUndefinedNameException.undefinedProperty(<span class="hljs-built_in">this</span>, index); <span class="hljs-comment">// 如果超出list长度，则报错</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> value;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这里问题就来了，<code>List</code>是一个已知的类型，而前面的<code>Object</code>传进来的很明显也应该是一个已知的类型。那么这个<code>Object</code>会是什么呢？</p>
+<h2 id="DynamicObject"><a href="#DynamicObject" class="headerlink" title="DynamicObject"></a>DynamicObject</h2><p>事实上，这个Object对应的是<code>DynamicObject</code>，而<code>DynamicObject</code>的最终实现则是<code>runtime</code>包下的<code>SLObjectType</code>。能看出<code>SLObjectType</code>即是<code>DynamicObject</code>的最直接证据就是<code>SLObjectType</code>的类注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@ExportLibrary(value = InteropLibrary.class, receiverType = DynamicObject.class)</span><br></code></pre></td></tr></table></figure>
+<p>这个连接过程有大量的代码生成来实现。</p>
+<p>可以看到<code>SLObjectType</code>实现了<code>hasArrayElements</code>，<code>hasMembers</code>等方法，还有<code>GetMembers</code>,<code>ReadMember</code>,<code>WriteMember</code>这些子类。从字面意思上都可以看出这些东西的功能，但是在代码上完全看不出它们与<code>DynamicObject</code>或是<code>InteropLibrary</code>的关系。</p>
+<p>如果想要知道<code>SLObjectType</code>中这些方法与<code>InteropLibrary</code>的关系，可以看<code>com.oracle.truffle.api.interop.InteropLibaray</code>的源码。</p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>花了很大的篇幅写ExpressionNode，所以Lambda放到下一篇。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://wooyme.github.io/2019/11/22/%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E5%86%99%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80-2/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://wooyme.github.io/2019/11/22/%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E5%86%99%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80-2/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2020/01/20/JVM%E9%82%A3%E4%BA%9B%E6%88%91%E4%BB%AC%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E5%8F%82%E6%95%B0/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/11/09/%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E5%86%99%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Wooyme's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        youremail@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2024/08/">八月 2024<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/04/">四月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">6</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/bollnh/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;Wooyme's Blog
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/bollnh/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+<script id="dsq-count-scr" src="//.disqus.com/count.js" async></script>
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<!-- <script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script> -->
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/bollnh/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

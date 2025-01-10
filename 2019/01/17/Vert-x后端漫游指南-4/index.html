@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/bollnh/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://.disqus.com"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Vert.x后端漫游指南(4) | 
+        
+        Wooyme&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.svg">
+    <link rel="icon" href="/img/favicon.svg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="我怎么会是正经人呢">
+    <meta name="keywords" content=",Vert.x">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Wooyme&#39;s Blog">
+    <meta name="msapplication-starturl" content="http://wooyme.github.io/2019/01/17/Vert-x%E5%90%8E%E7%AB%AF%E6%BC%AB%E6%B8%B8%E6%8C%87%E5%8D%97-4/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Wooyme&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.svg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://wooyme.github.io/2019/01/17/Vert-x%E5%90%8E%E7%AB%AF%E6%BC%AB%E6%B8%B8%E6%8C%87%E5%8D%97-4/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Vert.x后端漫游指南(4) | Wooyme&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.svg">
+    <meta property="og:description" content="我怎么会是正经人呢">
+    <meta property="og:article:tag" content="Vert.x"> 
+
+    
+        <meta property="article:published_time" content="Thu Jan 17 2019 18:09:03 GMT+0800">
+        <meta property="article:modified_time" content="Tue Aug 27 2024 16:00:05 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://wooyme.github.io/2019/01/17/Vert-x%E5%90%8E%E7%AB%AF%E6%BC%AB%E6%B8%B8%E6%8C%87%E5%8D%97-4/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://wooyme.github.io/2019/01/17/Vert-x%E5%90%8E%E7%AB%AF%E6%BC%AB%E6%B8%B8%E6%8C%87%E5%8D%97-4/index.html",
+    "headline": "Vert.x后端漫游指南(4)",
+    "datePublished": "Thu Jan 17 2019 18:09:03 GMT+0800",
+    "dateModified": "Tue Aug 27 2024 16:00:05 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Wooyme",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Wooyme&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.svg"
+        }
+    },
+    "keywords": ",Vert.x",
+    "description": "我怎么会是正经人呢",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%89%8D%E8%A8%80"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#API%EF%BC%9F"><span class="post-toc-number">2.</span> <span class="post-toc-text">API？</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Swagger-OpenAPI"><span class="post-toc-number">3.</span> <span class="post-toc-text">Swagger &amp; OpenAPI</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#yaml"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">yaml</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Swagger-Codegen"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Swagger-Codegen</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Vert-x%E7%9A%84Web-API-Contract"><span class="post-toc-number">4.</span> <span class="post-toc-text">Vert.x的Web API Contract</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9E%84%E5%BB%BA"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">构建</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B7%A5%E5%8E%82"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">创建一个工厂</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Vert-x%E7%9A%84Web-API-Service"><span class="post-toc-number">5.</span> <span class="post-toc-text">Vert.x的Web API Service</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9E%84%E5%BB%BA-1"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">构建</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BD%BF%E7%94%A8Interface"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">使用Interface</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%B7%BB%E5%8A%A0Service%E5%88%B0RouterFactory"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">添加Service到RouterFactory</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="post-toc-number">6.</span> <span class="post-toc-text">小结</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Vert.x后端漫游指南(4)
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Wooyme</strong>
+        <span>1月 17, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-none-link" href="/tags/Vert-x/" rel="tag">Vert.x</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Vert.x后端漫游指南(4)&url=http://wooyme.github.io/2019/01/17/Vert-x%E5%90%8E%E7%AB%AF%E6%BC%AB%E6%B8%B8%E6%8C%87%E5%8D%97-4/index.html&pic=http://wooyme.github.io/img/favicon.svg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Vert.x后端漫游指南(4)&url=http://wooyme.github.io/2019/01/17/Vert-x%E5%90%8E%E7%AB%AF%E6%BC%AB%E6%B8%B8%E6%8C%87%E5%8D%97-4/index.html&via=Wooyme" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://wooyme.github.io/2019/01/17/Vert-x%E5%90%8E%E7%AB%AF%E6%BC%AB%E6%B8%B8%E6%8C%87%E5%8D%97-4/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://wooyme.github.io/2019/01/17/Vert-x%E5%90%8E%E7%AB%AF%E6%BC%AB%E6%B8%B8%E6%8C%87%E5%8D%97-4/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>非常非常久没有更新 <em>Vert.x后端漫游指南</em> 了。主要是因为之前觉得Vert.x的Web后端实在是没有什么好写的，都是一些常规操作。再者，也有很长一段时间没有碰Vert.x的后端开发了。但是呢，因为打算做一个Vert.x全栈的服务端应用，所以又把Web后端的部分拿出来了。</p>
+<h1 id="API？"><a href="#API？" class="headerlink" title="API？"></a>API？</h1><p>虽然Vertx-Web也支持模板引擎这类的东西，但是无论是从潮流还是从Vertx支持程度的角度来看，前后端分离的开发方式更加适合现在的Web开发。那么既然前后端分离，提供一套完整、合理的API就非常重要了。<br>回顾一下之前的 <em>Vert.x后端漫游指南</em> ,我们使用了<code>Router.route(&quot;/api/path&quot;)</code>的方式来设置API。这种方式非常的简单粗暴，没有注解，没有配置文件，完完全全的硬编码。对于单人开发的简单服务来说，这样当然是没有问题的。但是当有了开发团队，需要前后端沟通的时候，这种硬编码的方式就变得很麻烦了。<br>一方面这意味着还得再单独写一份API文档给前端，</p>
+<blockquote>
+<p>程序员最讨厌两种事情，一是没有文档，二是写文档。</p>
+</blockquote>
+<p>另一方面是一旦要做什么修改，就必须要重新编译程序。  </p>
+<h1 id="Swagger-OpenAPI"><a href="#Swagger-OpenAPI" class="headerlink" title="Swagger &amp; OpenAPI"></a>Swagger &amp; OpenAPI</h1><blockquote>
+<p>Swagger <a href="https://swagger.io/">https://swagger.io/</a></p>
+</blockquote>
+<blockquote>
+<p>OpenApi <a href="https://www.openapis.org/">https://www.openapis.org/</a></p>
+</blockquote>
+<p>OpenAPI和Swagger给API开发带来了不一样的体验。Swagger是一套非常完善的API开发工具，最新的版本已经提供了对OpenAPI 3.0 的支持。</p>
+<h2 id="yaml"><a href="#yaml" class="headerlink" title="yaml"></a>yaml</h2><p>Swagger使用yaml作为配置文件，</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">openapi:</span> <span class="hljs-number">3.0</span><span class="hljs-number">.0</span><br><span class="hljs-attr">info:</span><br>    <span class="hljs-attr">title:</span> <span class="hljs-string">Sample</span> <span class="hljs-string">API</span><br>    <span class="hljs-attr">description:</span> <span class="hljs-string">Optional</span> <span class="hljs-string">multiline</span> <span class="hljs-string">or</span> <span class="hljs-string">single-line</span> <span class="hljs-string">description</span> <span class="hljs-string">in</span> [<span class="hljs-string">CommonMark</span>]<span class="hljs-string">(http://commonmark.org/help/)</span> <span class="hljs-string">or</span> <span class="hljs-string">HTML.</span><br>    <span class="hljs-attr">version:</span> <span class="hljs-number">0.1</span><span class="hljs-number">.9</span><br><span class="hljs-attr">servers:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">url:</span> <span class="hljs-string">/v1</span><br>    <span class="hljs-attr">description:</span> <span class="hljs-string">Optional</span> <span class="hljs-string">server</span> <span class="hljs-string">description,</span> <span class="hljs-string">e.g.</span> <span class="hljs-string">Main</span> <span class="hljs-string">(production)</span> <span class="hljs-string">server</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">url:</span> <span class="hljs-string">http://staging-api.example.com</span><br>    <span class="hljs-attr">description:</span> <span class="hljs-string">Optional</span> <span class="hljs-string">server</span> <span class="hljs-string">description,</span> <span class="hljs-string">e.g.</span> <span class="hljs-string">Internal</span> <span class="hljs-string">staging</span> <span class="hljs-string">server</span> <span class="hljs-string">for</span> <span class="hljs-string">testing</span>    <br><span class="hljs-attr">paths:</span><br>    <span class="hljs-string">/api/transactions/&#123;id&#125;:</span><br>        <span class="hljs-attr">get:</span><br>            <span class="hljs-attr">operationId:</span> <span class="hljs-string">getTransactionsList</span><br>            <span class="hljs-attr">parameters:</span><br>                <span class="hljs-bullet">-</span>   <span class="hljs-attr">name:</span> <span class="hljs-string">id</span><br>                    <span class="hljs-attr">in:</span> <span class="hljs-string">path</span><br>                    <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span><br>                    <span class="hljs-attr">schema:</span><br>                        <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>     <br>                <span class="hljs-bullet">-</span>   <span class="hljs-attr">name:</span> <span class="hljs-string">from</span><br>                    <span class="hljs-attr">in:</span> <span class="hljs-string">query</span><br>                    <span class="hljs-attr">required:</span> <span class="hljs-literal">false</span><br>                    <span class="hljs-attr">schema:</span><br>                        <span class="hljs-attr">type:</span> <span class="hljs-string">string</span><br>                <span class="hljs-bullet">-</span>   <span class="hljs-attr">name:</span> <span class="hljs-string">to</span><br>                    <span class="hljs-attr">in:</span> <span class="hljs-string">query</span><br>                    <span class="hljs-attr">required:</span> <span class="hljs-literal">false</span><br>                    <span class="hljs-attr">schema:</span><br>                        <span class="hljs-attr">type:</span> <span class="hljs-string">string</span><br>            <span class="hljs-attr">responses:</span> <br>                <span class="hljs-attr">200:</span><br>                    <span class="hljs-attr">content:</span><br>                        <span class="hljs-attr">application/json:</span><br>                            <span class="hljs-attr">schema:</span><br>                                <span class="hljs-attr">type:</span> <span class="hljs-string">object</span><br>        <span class="hljs-attr">put:</span><br>            <span class="hljs-attr">operationId:</span> <span class="hljs-string">putTransaction</span><br>            <span class="hljs-attr">parameters:</span><br>                <span class="hljs-bullet">-</span>   <span class="hljs-attr">name:</span> <span class="hljs-string">id</span><br>                    <span class="hljs-attr">in:</span> <span class="hljs-string">path</span><br>                    <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span><br>                    <span class="hljs-attr">schema:</span><br>                        <span class="hljs-attr">type:</span> <span class="hljs-string">string</span><br>            <span class="hljs-attr">requestBody:</span><br>                <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span><br>                <span class="hljs-attr">content:</span><br>                    <span class="hljs-attr">application/json:</span><br>                        <span class="hljs-attr">schema:</span><br>                            <span class="hljs-attr">type:</span> <span class="hljs-string">object</span><br>                            <span class="hljs-attr">properties:</span><br>                                <span class="hljs-attr">from:</span><br>                                    <span class="hljs-attr">type:</span> <span class="hljs-string">string</span><br>                                    <span class="hljs-attr">format:</span> <span class="hljs-string">email</span><br>                                <span class="hljs-attr">to:</span><br>                                    <span class="hljs-attr">type:</span> <span class="hljs-string">string</span><br>                                    <span class="hljs-attr">format:</span> <span class="hljs-string">email</span><br>                                <span class="hljs-attr">value:</span><br>                                    <span class="hljs-attr">type:</span> <span class="hljs-string">number</span><br>                                    <span class="hljs-attr">format:</span> <span class="hljs-string">double</span><br>                            <span class="hljs-attr">additionalProperties:</span> <span class="hljs-literal">false</span><br>                            <span class="hljs-attr">required:</span><br>                                <span class="hljs-bullet">-</span> <span class="hljs-string">from</span><br>                                <span class="hljs-bullet">-</span> <span class="hljs-string">to</span><br>                                <span class="hljs-bullet">-</span> <span class="hljs-string">value</span><br>            <span class="hljs-attr">responses:</span> <span class="hljs-string">...</span><br></code></pre></td></tr></table></figure>
+<p>大致上就是这个样子,详细的关于swagger中yaml配置的编写可以看官方文档</p>
+<blockquote>
+<p><a href="https://swagger.io/docs/specification/basic-structure/">https://swagger.io/docs/specification/basic-structure/</a></p>
+</blockquote>
+<p>总体来说就是把原来的硬编码改成了文件配置的模式。通过<code>paths</code>和<code>get</code>,<code>put</code>,<code>post</code>,<code>delete</code>一起组成各种API，同时也通过<code>parameters</code>和<code>requestBody</code>规定了各个API所需的参数，以及最后的<code>responses</code>用于规定服务端返回的数据结构。  </p>
+<h2 id="Swagger-Codegen"><a href="#Swagger-Codegen" class="headerlink" title="Swagger-Codegen"></a>Swagger-Codegen</h2><p>有了配置文件之后当然还是要能够生成对应的代码才行。Swagger提供了Swagger-Codegen来生成各种语言、框架的服务端和客户端代码。</p>
+<blockquote>
+<p><a href="https://github.com/swagger-api/swagger-codegen">https://github.com/swagger-api/swagger-codegen</a></p>
+</blockquote>
+<p>如果要使用<strong>OpenAPI 3.0</strong>的话就必须要安装3.0.0版本以上的Swagger-Codegen。目前由于这个工具还在频繁的更新中，所以bug也是挺多的，特别是在客户端代码的部分，前几天就遇到生成的<code>typescript-angular</code>的代码里没有把body放到<code>post</code>和<code>put</code>的参数里的问题。<br>如果开发的时候遇到了不可理喻的问题，就去issues里看看吧。</p>
+<h1 id="Vert-x的Web-API-Contract"><a href="#Vert-x的Web-API-Contract" class="headerlink" title="Vert.x的Web API Contract"></a>Vert.x的Web API Contract</h1><p>在写完Swagger之后呢，就要来看看Vert.x的Web API Contract了。为什么明明有Swagger了，Vert.x的团队还要搞个Contract呢，因为<strong>Swagger不支持Vert.x</strong>( 笑 。Swagger虽然已经支持很多主流框架了，但是很明显Vert.x还不是那么的”主流”。</p>
+<blockquote>
+<p>官方文档 <a href="https://vertx.io/docs/vertx-web-api-contract/java/">https://vertx.io/docs/vertx-web-api-contract/java/</a></p>
+</blockquote>
+<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>Maven</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>io.vertx<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>vertx-web-api-contract<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.6.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>Gradle</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs Groovy">dependencies &#123;<br> compile <span class="hljs-string">&#x27;io.vertx:vertx-web-api-contract:3.6.2&#x27;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="创建一个工厂"><a href="#创建一个工厂" class="headerlink" title="创建一个工厂"></a>创建一个工厂</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Java">OpenAPI3RouterFactory.create(vertx, <span class="hljs-string">&quot;yaml的路径,支持本地文件或是http、https的地址&quot;</span>, ar -&gt; &#123;<br>  <span class="hljs-keyword">if</span> (ar.succeeded()) &#123;<br>    <span class="hljs-comment">//得到了一个路由工厂</span><br>    <span class="hljs-type">OpenAPI3RouterFactory</span> <span class="hljs-variable">routerFactory</span> <span class="hljs-operator">=</span> ar.result();<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-type">Throwable</span> <span class="hljs-variable">exception</span> <span class="hljs-operator">=</span> ar.cause();<br>  &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
+<p>得到这样一个工厂之后，就可以添加各种处理器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs Java">routerFactory.addHandlerByOperationId(<span class="hljs-string">&quot;awesomeOperation&quot;</span>, routingContext -&gt; &#123;<br>  <span class="hljs-type">RequestParameters</span> <span class="hljs-variable">params</span> <span class="hljs-operator">=</span> routingContext.get(<span class="hljs-string">&quot;parsedParameters&quot;</span>);<br>  <span class="hljs-type">RequestParameter</span> <span class="hljs-variable">body</span> <span class="hljs-operator">=</span> params.body();<br>  <span class="hljs-type">JsonObject</span> <span class="hljs-variable">jsonBody</span> <span class="hljs-operator">=</span> body.getJsonObject();<br>  <span class="hljs-comment">// Do something with body</span><br>&#125;);<br>routerFactory.addFailureHandlerByOperationId(<span class="hljs-string">&quot;awesomeOperation&quot;</span>, routingContext -&gt; &#123;<br>  <span class="hljs-comment">// Handle failure</span><br>&#125;);<br></code></pre></td></tr></table></figure>
+<p>这里的<code>OperationId</code>就对应了yaml文件中的<code>OperationId</code>，对于需要做权限控制的路由，还可以添加<code>Security Handler</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Java">routerFactory.addSecurityHandler(<span class="hljs-string">&quot;security_scheme_name&quot;</span>, securityHandler);<br></code></pre></td></tr></table></figure>
+<p>对于之前我们用到的SessionHandler、CookieHandler，可以通过调用<code>addGlobalHandler</code>的方式来添加。需要注意的是BodyHandler不能用<code>addGlobalHandler</code>，<code>OpenAPI3RouterFactory</code>为它提供了专门的方法。</p>
+<p>在添加完处理器之后，就可以生产路由了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-type">Router</span> <span class="hljs-variable">router</span> <span class="hljs-operator">=</span> routerFactory.getRouter();<br><br><span class="hljs-type">HttpServer</span> <span class="hljs-variable">server</span> <span class="hljs-operator">=</span> vertx.createHttpServer(<span class="hljs-keyword">new</span> <span class="hljs-title class_">HttpServerOptions</span>().setPort(<span class="hljs-number">8080</span>).setHost(<span class="hljs-string">&quot;localhost&quot;</span>));<br>server.requestHandler(router).listen();<br></code></pre></td></tr></table></figure>
+<p>这部分跟之前相差无几，唯一要注意的是<code>router::accept</code>已经被弃用了，现在直接向<code>requestHandler</code>传递<code>router</code>就可以了。</p>
+<h1 id="Vert-x的Web-API-Service"><a href="#Vert-x的Web-API-Service" class="headerlink" title="Vert.x的Web API Service"></a>Vert.x的Web API Service</h1><blockquote>
+<p>Contract之后再来个Service是要干什么。</p>
+</blockquote>
+<p>各位肯定也都发现了，Web API Contract用起来是一点都不方便，先不说每个处理器都要通过<code>operationId</code>单独绑定，就说处理器得到的参数吧，一点都不智能，完全没有用到Yaml中配置的<code>parameters</code>，参数还是要像以前一样从<code>RoutingContext</code>里获取。<br>为了获得更好的开发体验，就必须要引入Web API Service了。</p>
+<blockquote>
+<p>官方文档 <a href="https://vertx.io/docs/vertx-web-api-service/java/">https://vertx.io/docs/vertx-web-api-service/java/</a></p>
+</blockquote>
+<h2 id="构建-1"><a href="#构建-1" class="headerlink" title="构建"></a>构建</h2><p>Maven</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>io.vertx<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>vertx-codegen<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.6.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">classifier</span>&gt;</span>processor<span class="hljs-tag">&lt;/<span class="hljs-name">classifier</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>io.vertx<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>vertx-web-api-service<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.6.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>Gradle</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs Groovy">dependencies &#123;<br> compile <span class="hljs-string">&#x27;io.vertx:vertx-codegen:3.6.2:processor&#x27;</span><br> compile <span class="hljs-string">&#x27;io.vertx:vertx-web-api-service:3.6.2&#x27;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>可以看到，除了<code>vertx-web-api-service</code>以外，还引入了<code>vertx-codegen</code>。在codegen面前，没有什么问题是解决不了的。</p>
+<h2 id="使用Interface"><a href="#使用Interface" class="headerlink" title="使用Interface"></a>使用Interface</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-meta">@WebApiServiceGen</span><br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">TransactionService</span> &#123;<br> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getTransactionsList</span><span class="hljs-params">(String from, String to, OperationRequest context, Handler&lt;AsyncResult&lt;OperationResponse&gt;&gt; resultHandler)</span>;<br> <span class="hljs-keyword">void</span> <span class="hljs-title function_">putTransaction</span><span class="hljs-params">(JsonObject body, OperationRequest context, Handler&lt;AsyncResult&lt;OperationResponse&gt;&gt; resultHandler)</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>Web API Service提供了另一种绑定handler的方式。接口中的方法名称需要和<code>operationId</code>相同，其中的参数也需要和<code>parameters</code>相同，需要注意的是如果使用<code>requestBody</code>，则对应<code>JsonObject body</code>。最后的<code>OperationRequest context</code>和<code>Handler&lt;AsyncResult&lt;OperationResponse&gt;&gt; resultHandler</code>是必须写的部分。分别代表了请求的额外信息和响应的对象。</p>
+<ul>
+<li>OperationRequest<ul>
+<li>getHeaders 请求头信息</li>
+<li>getParams 请求参数</li>
+<li>getUser 如果使用Auth，User就在这里</li>
+<li>getExtra 可以通过向RouterFactory添加<code>setExtraOperationContextPayloadMapper</code>来<strong>额外设置extra</strong>，这个很重要,通过这种方式可以把session带到handler里来。</li>
+</ul>
+</li>
+<li>OperationResponses<ul>
+<li>响应头</li>
+<li>响应状态</li>
+<li>响应主体</li>
+</ul>
+</li>
+</ul>
+<h2 id="添加Service到RouterFactory"><a href="#添加Service到RouterFactory" class="headerlink" title="添加Service到RouterFactory"></a>添加Service到RouterFactory</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs Kotlin">OpenAPI3RouterFactory.create(vertx,<span class="hljs-string">&quot;yaml文件路径&quot;</span>)&#123;<br>    <span class="hljs-keyword">val</span> serviceImpl = ServiceImpl()<br>    ServiceBinder(vertx)<br>        .setAddress(<span class="hljs-string">&quot;my-service&quot;</span>)<br>        .register(Service::<span class="hljs-keyword">class</span>.java,ServiceImpl)<br>    it.result().mountServiceInterface(Service::<span class="hljs-keyword">class</span>.java,<span class="hljs-string">&quot;my-service&quot;</span>)<br>    <span class="hljs-comment">//因为Web API Contract并不会处理yaml中的servers，所以需要自己设置sub-router</span><br>    <span class="hljs-keyword">val</span> router = Router.router(vertx).mountSubRouter(<span class="hljs-string">&quot;/api&quot;</span>,it.result().router)<br>    vertx.createHttpServer().requestHandler(router).listen(<span class="hljs-number">80</span>)&#123;<br>        logger.info(<span class="hljs-string">&quot;Listen at 80&quot;</span>)<br>    &#125;    <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这样就可以非常方便的使用Vert.x的Web API Service了。</p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>在使用了OpenAPI之后，Vert.x的后端开发就算是比较完整了。这种开发方式也能给前端开发提供很多便利，比硬编码的模式要更加适合现在的开发形式。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://wooyme.github.io/2019/01/17/Vert-x%E5%90%8E%E7%AB%AF%E6%BC%AB%E6%B8%B8%E6%8C%87%E5%8D%97-4/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://wooyme.github.io/2019/01/17/Vert-x%E5%90%8E%E7%AB%AF%E6%BC%AB%E6%B8%B8%E6%8C%87%E5%8D%97-4/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/02/12/%E5%B7%9D%E5%8F%94%E7%9A%84Ubuntu%E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%882333/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/12/22/Kotlin-Native%E6%B1%82%E7%94%9F%E6%8C%87%E5%8D%97-3/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Wooyme's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        youremail@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2024/08/">八月 2024<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/04/">四月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">6</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/bollnh/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;Wooyme's Blog
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/bollnh/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+<script id="dsq-count-scr" src="//.disqus.com/count.js" async></script>
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<!-- <script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script> -->
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/bollnh/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
